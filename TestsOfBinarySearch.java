@@ -13,7 +13,7 @@ import java.util.Random;
  * file that tests the binary search file
  */
 
-class BinarySearchTest {
+public class  TestsOfBinarySearch{
 
     @Test
     void testWithTargetInArray() {
