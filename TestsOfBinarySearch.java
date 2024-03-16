@@ -67,11 +67,14 @@ public class  TestsOfBinarySearch{
             int size = random.nextInt(200) + 1; // Avoid zero length
             int[] array = random.ints(size, 0, 1000).sorted().toArray();
             int targetIndex = random.nextInt(size);
-            int target = array[targetIndex];
+            int target = array[targetIndex]; // This gets the actual target value in the sorted array
 
-            assertEquals(targetIndex, BinarySearch.binarySearch(array, target), "Target should match the index in randomly generated array.");
+            int foundIndex = BinarySearch.binarySearch(array, target);
+            assertTrue(foundIndex >= 0, "Target should be found in the array.");
+            assertEquals(array[foundIndex], target, "Element at found index should match the target.");
         }
     }
+
 
     // A slower but correct algorithm
     private int linearSearch(int[] array, int target) {
